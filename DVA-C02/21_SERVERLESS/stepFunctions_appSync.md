@@ -44,3 +44,25 @@
   - 익스프레스 워크플로는 IoT 데이터 수집이나 스트리밍 데이터 처리 또는 모바일 앱 백엔드 등에 사용됩니다
   - 가장 큰 차이점은 비동기식 익스프레스 워크플로는 최소 1회 실행 보장 모델이고 동기식은 익스프레스 워크플로는 최대 1회 실행 모델이라는 것인데, 시험에 나올 수 있으니
   - 동기식 익스프레스의 경우 마이크로서비스를 오케스트레이션하고 실행을 중지하기 전에 모든 것이 제대로 작동하는지 확인하고자 할 경우, 동기식 워크플로를 사용하면 API 게이트웨이나 람다 함수에서 호출하여 응답을 얻을 수 있어요
+
+# appsync
+- AppSync는 시험에서 두 가지 포인트가 있습니다 첫 번째는 GraphQL을 사용하는 관리 서비스입니다
+- AWS AppSync 사용의 두 번째 포인트는 실시간 WebSocket 또는 WebSockets의 MQTT 통합입니다
+- AppSync는 전에 본 Cognito Sync라는 오래된 것을 대체하는 서비스입니다
+- 개략적으로 AppSync는 웹 애플리케이션, GraphQL을 사용하는 모바일 애플리케이션 및 실시간 애플리케이션을 통합합니다
+- ![image](https://github.com/user-attachments/assets/db6e9d8c-ab26-4457-9e05-49148fae5657)
+- 첫 번째는 API_KEY로 API Gateway처럼 키를 생성하고 사용자에게 줍니다
+- 두 번째는 AWS_IAM을 이용하여 IAM 사용자, 역할, 또는 계정에 걸친 접근을 부재 API에 허용하는 것입니다
+- OPENID_CONNECT는 OpenID Connect 공급자와 JSON 웹 토큰을 통합합니다
+- 마지막으로 AMAZON_COGNITO_USER_POOL은 Cognito 사용자 풀을 통해 생성한 기존 사용자 풀과 통합합니다
+- 마지막으로 AppSync에서 사용자 정의 도메인과 HTTPS 보안을 원한다면 AppSync 앞에 CloudFront를 사용할 것을 추천합니다
+
+# aws amplify
+- Amplify는 모바일과 웹 애플리케이션을 만들 수 있는 서비스로
+- ![image](https://github.com/user-attachments/assets/88c84855-bae0-4ea0-af51-2941e06d6de6)
+- 첫 번째는 별도의 설치 없이 즉시 사용 가능한 인증 기능을 제공한다는 건데요
+- 두 번째는 데이터스토어 관련 기능으로 amplify add api 명령어를 사용하여
+- 마지막으로 Amplify Hosting은 애플리케이션을 배포하고자 할 때 사용하는 서비스로 amplify add hosting 명령어를 사용하면 최신 웹 앱을 빌드하고 호스팅할 수 있고 빌드, 테스트, 배포와 같은 CI/CD 프로세스를 수행하며
+- Amplify에는 선택적으로 테스트를 실행할 수 있으며 단위 테스트와 종단간 테스트라는
+- 요약하자면 앱을 빌드하는 단계에서는 단위 테스트를 실시하여
+- 앱을 배포할 때는 E2E 테스트를 실시하는데
